@@ -1,38 +1,136 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+} */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+  font-size: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.App {
+ background-image: url(./images/logo.jpg);
+ height: 100%; 
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;}
+
+ .img {
+  background-image: url(./images/prize.jpg);
+  background-position: 10px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 12%;
+
+ }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+.react-transition {
+  animation-fill-mode: both;
+}
+
+@keyframes swipeUp {
+  0%   {color:#f5deb3; left:0px; top:0px;}
+  25%  {color:#f5deb3; left:200px; top:0px;}
+  50%  {color:#f5deb3; left:200px; top:200px;}
+  75%  {color:#f5deb3; left:0px; top:200px;}
+  100% {color:#f5deb3; left:0px; top:0px;}
+}
+
+.swipe-up {
+  position: relative;
+  animation-name: swipeUp;
+  animation-duration: 4s;
+}
+
+
+@keyframes swipeLeft {
   from {
-    transform: rotate(0deg);
+    transform: translate3d(-1000px,0,0);
+    opacity: 0;
   }
+
   to {
-    transform: rotate(360deg);
+    transform: translate3d(0,0,0);
+    opacity: 1;
   }
 }
+
+.swipe-left {
+  animation-timing-function: ease-in-out;
+  transform-origin: bottom center;
+  animation-name: swipeLeft;
+  animation-duration: 2000ms;
+}
+
+
+@keyframes swipeRight {
+  from {
+    transform: translate3d(1000px,0,0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+
+.swipe-right {
+  animation-timing-function: ease-in-out;
+  transform-origin: bottom center;
+  animation-name: swipeRight;
+  animation-duration: 1000ms;
+}
+
+
+
+@keyframes swipeDown {
+  from {
+    transform: translate3d(0,-100vh,0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+
+.swipe-down {
+  animation-timing-function: ease-in-out;
+  transform-origin: bottom center;
+  animation-name: swipeDown;
+  animation-duration: 300ms;
+}
+
+.image {
+  font-size: 40px;
+    color: #f5deb3;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-family: cursive;
+}
+
+.box {
+  text-align: center;
+  font-family: cursive;
+}
+
